@@ -14,7 +14,7 @@ function Sales({ ifExists, endpoint: { title, items } }) {
           }`}
         >
           {items?.map((item, i) => (
-            <Item {...item} key={i} />
+            <Item {...item} key={i} ifExists={ifExists} />
           ))}
         </div>
       </div>

@@ -1,10 +1,23 @@
 import { StarIcon, ShoppingBagIcon } from '@heroicons/react/24/solid';
 
-function Item({ id, color, shadow, title, text, img, btn, rating, price }) {
+function Item({
+  ifExists,
+  id,
+  color,
+  shadow,
+  title,
+  text,
+  img,
+  btn,
+  rating,
+  price,
+}) {
   return (
     <>
       <div
-        className={`relative bg-gradient-to-b ${color} ${shadow} grid items-center justify-items-center rounded-xl py-4 px-5 transition-all duration-700 ease-in-out w-full hover:scale-105`}
+        className={`relative bg-gradient-to-b ${color} ${shadow} grid items-center ${
+          ifExists ? 'justify-items-start' : 'justify-items-center'
+        }  rounded-xl py-4 px-5 transition-all duration-700 ease-in-out w-full hover:scale-105`}
       >
         <div className="grid items-center justify-items-center ">
           <h1 className="text-slate-200 text-xl lg:text-lg md:text-base font-medium filter drop-shadow">
