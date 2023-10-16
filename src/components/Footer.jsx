@@ -25,7 +25,7 @@ function Footer({ footerAPI: { titles, links } }) {
             <p className="text-sm md:text-center">
               Copyright<sup className="text-base font-bold"> &copy;</sup> All
               Reserved Rights
-              <span className="font-semibold"> MJCODES</span>
+              <span className="font-semibold"> MJ.CODES</span>
             </p>
           </div>
         </div>
