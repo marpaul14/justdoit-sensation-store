@@ -21,11 +21,11 @@ const CartSlice = createSlice({
       );
 
       if (itemIndex >= 0) {
-        state.cartItems[itemIndex];
+        state.cartItems[itemIndex].cartQuantity += 1;
+      } else {
+        const temp = { ...action.payload, cartQuantity: 1 };
+        state.cartItems.push(temp);
       }
-
-      const temp = { ...action.payload, cartQuantity: 1 };
-      state.cartItems.push(temp);
     },
   },
 });
