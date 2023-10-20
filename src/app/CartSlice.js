@@ -3,7 +3,9 @@ import toast from 'react-hot-toast';
 
 const initialState = {
   cartState: false,
-  cartItems: [],
+  cartItems: localStorage.getItem('cart')
+    ? JSON.parse(localStorage.getItem('cart'))
+    : [],
 };
 
 const CartSlice = createSlice({
@@ -31,6 +33,8 @@ const CartSlice = createSlice({
 
         toast.success(`${action.payload.title} added to Cart`);
       }
+
+      localStorage.setItem('cart', JSON.stringify(state.cartItems));
     },
   },
 });
