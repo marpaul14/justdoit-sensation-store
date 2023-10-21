@@ -19,7 +19,6 @@ function Item({
     const item = { id, title, text, img, color, shadow, price };
     dispatch(setAddItemToCart(item));
   }
-
   return (
     <>
       <div
