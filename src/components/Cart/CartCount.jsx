@@ -1,7 +1,6 @@
 import { ChevronDoubleLeftIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 function CartCount({ onCartToggle, onClearCartItems, totalQTY }) {
-  console.log(totalQTY);
   return (
     <>
       <div className="bg-white h-11 flex items-center justify-between px-3 sticky top-0 left-0 right-0 w-full">
