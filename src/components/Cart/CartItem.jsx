@@ -1,6 +1,10 @@
 import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { useDispatch } from 'react-redux';
-import { setRemoveItemFromCart } from '../../app/CartSlice';
+import {
+  setDecreaseItemQTY,
+  setIncreaseItemQTY,
+  setRemoveItemFromCart,
+} from '../../app/CartSlice';
 
 function CartItem({
   item: { id, title, text, img, color, shadow, price, cartQuantity },
@@ -20,6 +24,36 @@ function CartItem({
       }),
     );
   }
+
+  function onIncreaseItemQTY() {
+    dispatch(
+      setIncreaseItemQTY({
+        id,
+        title,
+        text,
+        img,
+        color,
+        shadow,
+        price,
+        cartQuantity,
+      }),
+    );
+  }
+  function onDecreaseItemQTY() {
+    dispatch(
+      setDecreaseItemQTY({
+        id,
+        title,
+        text,
+        img,
+        color,
+        shadow,
+        price,
+        cartQuantity,
+      }),
+    );
+  }
+
   return (
     <>
       <div className="flex items-center justify-between w-full px-5">
@@ -43,6 +77,7 @@ function CartItem({
             <div className="flex items-center justify-around w-full">
               <button
                 type="button"
+                onClick={onDecreaseItemQTY}
                 className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90"
               >
                 <MinusIcon className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2]" />
@@ -52,6 +87,7 @@ function CartItem({
               </div>
               <button
                 type="button"
+                onClick={onIncreaseItemQTY}
                 className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90"
               >
                 <PlusIcon className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2]" />
